@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Aqib Uddin</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        header {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #1a252f;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .personal-statement {
+            font-size: 1.15rem;
+            color: #495057;
+            font-weight: 500;
+        }
+        section {
+            margin-bottom: 35px;
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
+        .skills-list li {
+            background: #e9ecef;
+            color: #212529;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        .project-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .project-card h3 {
+            color: #1a252f;
+            margin-bottom: 8px;
+        }
+        .project-card p {
+            color: #6c757d;
+            margin-bottom: 12px;
+        }
+        .project-link {
+            display: inline-block;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #868e96;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Section 1: Personal Statement -->
+        <header>
+            <h1>Aqib Uddin</h1>
+            <p class="personal-statement">
+                Driven Rutgers Business School student passionate about leveraging data analytics and strategic marketing to deliver impactful, user-centered business solutions.
+            </p>
+        </header>
+
+        <!-- Section 2: Skills -->
+        <section>
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Data Analysis & Visualization</li>
+                <li>Digital Marketing Strategy</li>
+                <li>Python & SQL</li>
+                <li>HTML / CSS</li>
+                <li>Project Management</li>
+                <li>Professional Storytelling</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Projects -->
+        <section>
+            <h2>Projects</h2>
+
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+                <p>Designed and deployed a responsive personal portfolio using HTML, CSS, and GitHub Pages to establish a digital presence for prospective employers.</p>
+                <a href="https://github.com/aqibuddin/portfolio" class="project-link" target="_blank">View Code on GitHub &rarr;</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Brand Strategy Analysis</h3>
+                <p>Analyzed market position and core target demographics for a retail brand, compiling actionable strategic insights into a executive summary report.</p>
+                <a href="https://github.com/aqibuddin/brand-analysis" class="project-link" target="_blank">View Project Repo &rarr;</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Business Case Competition Project</h3>
+                <p>Collaborated with a 4-member team to solve a operational challenge for a mock logistics enterprise, achieving top-3 placement in the course presentation.</p>
+                <a href="https://github.com/aqibuddin/case-study" class="project-link" target="_blank">View Slides & Code &rarr;</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Aqib Uddin. Built for Building Your Brand (33:011:302).</p>
+        </footer>
+    </div>
+
+</body>
+</html>
