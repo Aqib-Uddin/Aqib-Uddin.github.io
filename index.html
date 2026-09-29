@@ -3,145 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Aqib Uddin</title>
+    <title>Aqib Uddin | Finance & Quantitative Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 31, 49, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-accent: #38bdf8;
+            --secondary-accent: #818cf8;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --badge-bg: rgba(56, 189, 248, 0.12);
+            --badge-text: #38bdf8;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            padding: 20px;
+            padding: 40px 20px;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            min-height: 100vh;
         }
+
         .container {
-            max-width: 900px;
+            max-width: 920px;
             margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
+
+        /* Profile Header Component */
         header {
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 40px;
             margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 30px;
         }
+
+        .profile-img-container {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(56, 189, 248, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .header-content {
+            flex-grow: 1;
+        }
+
+        .header-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
         h1 {
-            color: #1a252f;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+            font-size: 2.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
         }
+
+        .subtitle {
+            display: inline-block;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
         .personal-statement {
-            font-size: 1.15rem;
-            color: #495057;
-            font-weight: 500;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            line-height: 1.6;
         }
+
         section {
             margin-bottom: 35px;
         }
-        h2 {
-            color: #2c3e50;
-            font-size: 1.5rem;
-            border-bottom: 2px solid #007bff;
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        .skills-list {
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 20px;
             display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background: linear-gradient(180deg, var(--primary-accent), var(--secondary-accent));
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            transition: all 0.25s ease;
+        }
+
+        .skill-item:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            border-radius: 14px;
+            padding: 28px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .project-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
             flex-wrap: wrap;
             gap: 10px;
-            list-style: none;
         }
-        .skills-list li {
-            background: #e9ecef;
-            color: #212529;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-        .project-card {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 15px;
-        }
+
         .project-card h3 {
-            color: #1a252f;
-            margin-bottom: 8px;
-        }
-        .project-card p {
-            color: #6c757d;
-            margin-bottom: 12px;
-        }
-        .project-link {
-            display: inline-block;
-            color: #007bff;
-            text-decoration: none;
+            color: #f8fafc;
+            font-size: 1.2rem;
             font-weight: 600;
         }
+
+        .project-role {
+            font-size: 0.85rem;
+            color: var(--secondary-accent);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
         .project-link:hover {
+            color: #7dd3fc;
             text-decoration: underline;
         }
+
         footer {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #e9ecef;
-            color: #868e96;
-            font-size: 0.9rem;
+            padding: 30px 0 10px;
+            color: #64748b;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--card-border);
+        }
+
+        @media (max-width: 680px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+            .header-title-container {
+                justify-content: center;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Section 1: Personal Statement -->
+        <!-- Section 1: Header with Headshot -->
         <header>
-            <h1>Aqib Uddin</h1>
-            <p class="personal-statement">
-                Driven Rutgers Business School student passionate about leveraging data analytics and strategic marketing to deliver impactful, user-centered business solutions.
-            </p>
+            <div class="profile-img-container">
+                <img src="Aqib.Uddin_Headshot.jpg" alt="Aqib Uddin Headshot" class="profile-img">
+            </div>
+            <div class="header-content">
+                <div class="header-title-container">
+                    <h1>Aqib Uddin</h1>
+                    <span class="subtitle">Rutgers Business School</span>
+                </div>
+                <p class="personal-statement">
+                    Detail-oriented finance student at Rutgers specializing in 3-statement modeling, derivatives research, and quantitative analysis—driven to optimize valuation and corporate strategy.
+                </p>
+            </div>
         </header>
 
-        <!-- Section 2: Skills -->
+        <!-- Section 2: Skills Showcase -->
         <section>
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Data Analysis & Visualization</li>
-                <li>Digital Marketing Strategy</li>
-                <li>Python & SQL</li>
-                <li>HTML / CSS</li>
-                <li>Project Management</li>
-                <li>Professional Storytelling</li>
-            </ul>
+            <h2 class="section-title">Skills & Capabilities</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Three-Statement Modeling</div>
+                <div class="skill-item">Financial Derivatives</div>
+                <div class="skill-item">Python & SQL</div>
+                <div class="skill-item">Microsoft Excel</div>
+                <div class="skill-item">Game Theory Modeling</div>
+                <div class="skill-item">AI Integration in Finance</div>
+            </div>
         </section>
 
         <!-- Section 3: Projects -->
         <section>
-            <h2>Projects</h2>
+            <h2 class="section-title">Featured Projects & Research</h2>
+            <div class="projects-grid">
 
-            <div class="project-card">
-                <h3>Personal Portfolio Website</h3>
-                <p>Designed and deployed a responsive personal portfolio using HTML, CSS, and GitHub Pages to establish a digital presence for prospective employers.</p>
-                <a href="https://github.com/aqibuddin/portfolio" class="project-link" target="_blank">View Code on GitHub &rarr;</a>
-            </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Pharmaceutical 3-Statement Financial Model</h3>
+                    </div>
+                    <div class="project-role">Bender Trust Project – Little Investment Bankers of Rutgers</div>
+                    <p>
+                        Engineered a comprehensive 5-year 3-statement financial model analyzing key revenue drivers, operating margins, and discounted cash flows for a pharmaceutical company. Evaluated 7+ key valuation drivers that impacted firm valuation by 18–22%.
+                    </p>
+                    <a href="https://github.com/aqibuddin/financial-model-project" class="project-link" target="_blank">
+                        View Project on GitHub &rarr;
+                    </a>
+                </div>
 
-            <div class="project-card">
-                <h3>Brand Strategy Analysis</h3>
-                <p>Analyzed market position and core target demographics for a retail brand, compiling actionable strategic insights into a executive summary report.</p>
-                <a href="https://github.com/aqibuddin/brand-analysis" class="project-link" target="_blank">View Project Repo &rarr;</a>
-            </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Credit Default Swaps & Empty Creditor Research</h3>
+                    </div>
+                    <div class="project-role">Academic Research – Financial Derivatives</div>
+                    <p>
+                        Conducted quantitative research on Credit Default Swaps (CDS) and the Empty Creditor Hypothesis. Modeled strategic interactions using Game Theory to analyze market manipulation, predatory trading strategies, and regulatory loopholes.
+                    </p>
+                    <a href="https://github.com/aqibuddin/cds-game-theory-research" class="project-link" target="_blank">
+                        View Research Overview &rarr;
+                    </a>
+                </div>
 
-            <div class="project-card">
-                <h3>Business Case Competition Project</h3>
-                <p>Collaborated with a 4-member team to solve a operational challenge for a mock logistics enterprise, achieving top-3 placement in the course presentation.</p>
-                <a href="https://github.com/aqibuddin/case-study" class="project-link" target="_blank">View Slides & Code &rarr;</a>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Goldman Sachs Possibilities Series</h3>
+                    </div>
+                    <div class="project-role">Asset Management Insights</div>
+                    <p>
+                        Selected for a competitive introductory program exploring core Asset Management concepts, portfolio construction, and corporate restructuring strategies through direct networking and interactive workshops with firm leadership.
+                    </p>
+                    <a href="https://github.com/aqibuddin/asset-management-insights" class="project-link" target="_blank">
+                        View Insights Repo &rarr;
+                    </a>
+                </div>
+
             </div>
         </section>
 
